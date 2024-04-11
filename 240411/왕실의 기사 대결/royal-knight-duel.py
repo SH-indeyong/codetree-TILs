@@ -10,7 +10,6 @@ for n in range(1, N + 1):
 
 di = [-1, 0, 1, 0]
 dj = [0, 1, 0, -1]
-result = 0
 
 def move(start, dr):
     global result
@@ -56,7 +55,6 @@ def move(start, dr):
             knight.pop(idx)
         else:
             ni, nj = si + di[dr], sj + dj[dr]
-            result += damage[idx]
             knight[idx] = [ni, nj, h, w, k - damage[idx]]
 
 for _ in range(1, Q + 1):
@@ -64,4 +62,7 @@ for _ in range(1, Q + 1):
     if idx in knight:
         move(idx, dr)
 
+result = 0
+for idx in knight:
+    result += health[idx] - knight[idx][4]
 print(result)
