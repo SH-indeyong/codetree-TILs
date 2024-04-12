@@ -60,7 +60,7 @@ for T in range(1, K + 1):
                 mini, max_turn, si, sj = arr[i][j], turn[i][j], i, j    # 공격자 선택!
 
     # [2] 타겟 찾기
-    maxi, min_turn, ei, j = 0, T, N, M
+    maxi, min_turn, ei, ej = 0, T, N, M
     for i in range(N):
         for j in range(M):
             # 포탑이 아닌 경우 스킵
@@ -68,7 +68,7 @@ for T in range(1, K + 1):
                 continue
             if maxi < arr[i][j] or (maxi == arr[i][j] and min_turn > turn[i][j]) \
                     or (maxi == arr[i][j] and min_turn == turn[i][j] and ei + ej > i + j) \
-                    or (maxi == arr[i][j] and min_turn == turn[i][j] and ei + ej == i + j and sj < j):
+                    or (maxi == arr[i][j] and min_turn == turn[i][j] and ei + ej == i + j and ej > j):
                 maxi, min_turn, ei, ej = arr[i][j], turn[i][j], i, j  # 타겟 선택!
 
     # [3] 레이저 공격 (우하상좌 순서로 최단거리 이동)
