@@ -10,10 +10,10 @@ arr = [[0] * N for _ in range(N)]
 
 players = {}
 for m in range(1, M + 1):
-    x, y, d, p = map(int, input().split())
+    i, j, d, p = map(int, input().split())
     # m번째 플레이어 (i, j, d, p, gun, score)
-    players[m] = [x - 1, y - 1, d, p, 0, 0]
-    arr[x - 1][y - 1] = m
+    players[m] = [i - 1, j - 1, d, p, 0, 0]
+    arr[i - 1][j - 1] = m
 
 opp = {0: 2, 1: 3, 2: 0, 3: 1}
 di = [-1, 0, 1, 0]
@@ -22,7 +22,7 @@ dj = [0, 1, 0, -1]
 def leave(idx, ci, cj, cd, cp, cg, cs):
     # 현재방향에서부터 시계방향 90도씬 빈 칸 찾기
     for r in range(4):
-        ni, nj = ci + di[(ci + r) % 4], cj + dj[(cj + r) % 4]
+        ni, nj = ci + di[(cd + r) % 4], cj + dj[(cd + r) % 4]
         if 0 <= ni < N and 0 <= nj < N and arr[ni][nj] == 0:
             if len(gun[ni][nj]) > 0:
                 cg = max(gun[ni][nj])
@@ -52,8 +52,8 @@ for _ in range(K):
                         gun[ni][nj].append(cg)      # 플레이어가 총을 가지고 있었다면 자리에 내려놓기
                     gun[ni][nj].remove(maxi)
                     cg = maxi
-                arr[ni][nj] = i
-                players[i] = (ni, nj, cd, cp, cg, cs)
+            arr[ni][nj] = i
+            players[i] = [ni, nj, cd, cp, cg, cs]
         # [2-2] 이동한 칸에 다른 사람이 있는 경우
         else:
             # 상대방 정보
