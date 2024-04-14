@@ -4,10 +4,12 @@
 |총 문제 수|티어|유형|
 |---:|---|---|
 |1|![Gold3][g3] ~ ![Gold3][g3]|`Simulation`|
+|1|![Gold1][g1]|`BFS` `Simulation`|
 
 |기록분류|이름|티어|유형|상태|최근 제출 코드|
 |---|---|---|---|---|---|
 |기출문제|[메이즈 러너](https://www.codetree.ai/training-field/frequent-problems/problems/maze-runner)|![Gold3][g3]|`Simulation`|![Passed][passed]|[링크](https://github.com/SH-indeyong/codetree-TILs/blob/main/240413/%EB%A9%94%EC%9D%B4%EC%A6%88%20%EB%9F%AC%EB%84%88/maze-runner.py)|
+|기출문제|[포탑 부수기](https://www.codetree.ai/training-field/frequent-problems/problems/destroy-the-turret)|![Gold1][g1]|`Simulation`|![Passed][passed]|[링크](https://github.com/SH-indeyong/codetree-TILs/blob/main/240413/%EB%A9%94%EC%9D%B4%EC%A6%88%20%EB%9F%AC%EB%84%88/destroy-the-turret.py)|
 
 
 
